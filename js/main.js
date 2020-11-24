@@ -5,7 +5,9 @@ $(window).on('load', function () {
     });
 });
 $(document).ready(function () {
-    var rellax = new Rellax('.rellax');
+    if ($("img").hasClass("rellax")) {
+        var rellax = new Rellax('.rellax');
+    }
     new WOW().init();
     //////////** heroes slider **//////////
     var heroeswiper = new Swiper('.heroes-slider .swiper-container', {
@@ -72,4 +74,16 @@ $(document).ready(function () {
         $(".modal-absolute").removeClass("modal-in");
         $("body").removeClass("overflow");
     });
+    ///////// **course** /////////
+
+    $('.day-head').click(function () {
+        $(".day-head").not(this).parent(".day-body").removeClass("active");
+        $(this).parent(".day-body").toggleClass("active");
+        if ($(this).siblings().css('display') == 'none') {
+            $(this).siblings().slideDown(500);
+        } else {
+            $(this).siblings().slideUp(500);
+        }
+        $(".day-head").not(this).siblings().slideUp(500);
+    })
 });
