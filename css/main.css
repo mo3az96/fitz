@@ -1684,7 +1684,8 @@ html[lang=ar] .social-cont .social ~ .social {
           transform: translate(-50%, -50%) scale(0.95);
 }
 
-.course-desc {
+.course-desc,
+.food-desc {
   background-color: #fff;
   padding: 55px 30px;
 }
@@ -1734,6 +1735,13 @@ html[lang=ar] .social-cont .social ~ .social {
   padding-bottom: 55px;
 }
 
+@media (max-width: 767px) {
+  .block-ul {
+    -ms-grid-columns: 1fr;
+        grid-template-columns: 1fr;
+  }
+}
+
 .block-ul li {
   margin-top: 15px;
   font-size: 16px;
@@ -1756,6 +1764,11 @@ html[lang=en-US] .block-ul li::before {
 
 html[lang=ar] .block-ul li::before {
   margin-left: 5px;
+}
+
+.food-desc .block-ul {
+  -ms-grid-columns: 1fr;
+      grid-template-columns: 1fr;
 }
 
 .book-now {
